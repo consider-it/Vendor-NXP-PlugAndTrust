@@ -2,6 +2,14 @@
  *
  * Copyright 2018-2020 NXP
  * SPDX-License-Identifier: Apache-2.0
+ *
+ * Configured for:
+ * - Applet:         SE05X_C
+ * - SE05X_Ver:      03_XX
+ * - HostCrypto:     MBEDTLS
+ * - mbedTLS_ALT:    SSS
+ * - SCP:            SCP03_SSS
+ * - SE05X_Auth:     PlatfSCP03
  */
 
 #ifndef SSS_APIS_INC_FSL_SSS_FTR_H_
@@ -118,7 +126,7 @@
  */
 
 /** Use mbedTLS as host crypto */
-#define SSS_HAVE_HOSTCRYPTO_MBEDTLS 0
+#define SSS_HAVE_HOSTCRYPTO_MBEDTLS 1
 
 /** Use mbed-crypto as host crypto
  * Required for ARM-PSA / TF-M */
@@ -198,7 +206,7 @@
 #define SSS_HAVE_SCP_NONE 0
 
 /** Use SSS Layer for SCP.  Used for SE050 family. */
-#define SSS_HAVE_SCP_SCP03_SSS 0
+#define SSS_HAVE_SCP_SCP03_SSS 1
 
 /** Use Host Crypto Layer for SCP03. Legacy implementation. Used for older demos of A71CH Family. */
 #define SSS_HAVE_SCP_SCP03_HOSTCRYPTO 0
@@ -292,13 +300,13 @@
  */
 
 /** Use the default session (i.e. session less) login */
-#define SSS_HAVE_SE05X_AUTH_NONE 1
+#define SSS_HAVE_SE05X_AUTH_NONE 0
 
 /** Do User Authentication with UserID */
 #define SSS_HAVE_SE05X_AUTH_USERID 0
 
 /** Use Platform SCP for connection to SE */
-#define SSS_HAVE_SE05X_AUTH_PLATFSCP03 0
+#define SSS_HAVE_SE05X_AUTH_PLATFSCP03 1
 
 /** Do User Authentication with AES Key
  * Earlier this was called AppletSCP03 */
